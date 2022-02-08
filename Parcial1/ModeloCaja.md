@@ -11,7 +11,7 @@ Estas cajas son invisible al usuario y estas cajas se pueden aplicar ciertas pro
 
 Las cajas de una página se crean automáticamente. Cada vez que se inserta una etiqueta HTML, se crea una nueva caja rectangular que encierra los contenidos de ese elemento.  
 
-<img src = https://3con14.biz/css/_data/04_Modelo_cajas/modelo_cajas1.png width = "350" >
+<img src = https://3con14.biz/css/_data/04_Modelo_cajas/modelo_cajas1.png width = "510" height = "550" >
 
 *Un ejemplo de la vista de cajas en una página*
 
