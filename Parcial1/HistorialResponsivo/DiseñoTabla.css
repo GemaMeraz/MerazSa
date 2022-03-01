@@ -1,0 +1,26 @@
+* {
+    margin: 2px;
+    padding: 2px;
+}
+
+body { font: 14px/1.4 Verdana, Serif; }       
+#contenedor { margin: 30px; }
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 0.5px solid black;
+}
+
+tr:nth-of-type(odd){ background: lightblue;}
+
+th {
+    background: rgb(11, 121, 155);
+    color: white;
+    font-weight: bold;
+}
+td,th{
+    padding: 8px;
+    border: 0.5px solid black;
+    text-align: left;
+}
