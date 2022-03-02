@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0x;
+    padding:0;
+}
+
+ul{
+    list-style:none;
+    width: 300px;
+    height:500px;
+}
+
+
+ul>li>ul{
+    display: none;
+}
+
+ul>li:hover>ul{
+    display: block;
+    height: 100%;
+   
+}
+
+.opcion{
+    background: darkcyan;
+    color: rgb(238, 237, 192);
+    /*margin: 20px;*/
+}
+
+.subOpcion{
+    padding-left: 20px;
+    background: rgb(57, 122, 131);
+    color: rgb(255, 255, 255);
+}
+
