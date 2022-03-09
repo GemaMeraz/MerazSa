@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+/*Formato*/
+.ModificarLabel {
+    background-color: rgb(80, 176, 255);
+    padding: 5px;
+    color: cornsilk;
+    font-size: 25px;
+}
+
+
+
+div.BarraLateral{
+position: fixed;
+background-color:rgb(116, 149, 154);
+width: 200px;
+height: 100%;
+overflow: auto;
+
+}
+
+
+
+a{
+display: block;
+text-decoration:dotted;
+padding: 5px;
+color: white;
+}
+
+a:hover{
+    background-color: darkcyan;
+    color: rgb(212, 215, 247);
+}
+
+div.content{
+    background-color:rgb(246, 234, 190);
+    margin-left: 200px;
+    padding: 2px 15px;
+    height: 1500px;
+   
+}
+
+
+#Inicio img{
+    width: 100%;
+    height: 410px;
+    margin-bottom: 15px;
+}
+
+/*Tamaño de las imagenes que se muestras en las categorias*/
+#Desayunos img, #Comidas img, #Postres img{
+    width: 30%;
+    margin-left: 30%;
+    height: 50%;
+}
+/*Modificar caracteristicas de h1*/
+h1{
+    font-size: 55px;
+    text-align: center;
+    font-style:oblique;
+}
+.contenidoOpcion{display: none;}
+
+#Inicio:target,
+#Postres:target,
+#Desayunos:target,
+#Comidas:target{display: block;}
+
+@media screen and (max-width: 1200px){
+    div.BarraLateral{
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    
+    .BarraLateral a {float: left;}
+
+    div.content{margin-left: 0;}
+
+    input:checked + .BarraLateral{
+        height: 0;
+      }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .BarraLateral a{
+        float: none;
+        text-align: center;
+        
+    }
+    input:checked + .BarraLateral{
+        height: 0;
+      }
+}
+
+input {display: none;}
+
+input:checked + .BarraLateral{
+  width: 0;
+  transition: width 1s ease-out;
+}
+
+input:checked ~ .content {
+  margin-left: 0;
+}
+
+
+
