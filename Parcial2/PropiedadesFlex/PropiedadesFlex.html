@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Flex</title>
+    <style>
+         table, td, th{
+            border: 1.5px solid darkcyan;
+            background-color: bisque;
+            border-collapse:collapse;
+            padding: 10px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+        }
+
+        thead tr{
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+        
+        h3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(245, 236, 228)";>
+    <h1>FlexBox</h1>
+    <h3>Gema Nataly Meraz Sánchez 19100218</h3>
+    El eje principal está definido por la propiedad flex-direction, y el eje perpendicular a este.<br> <img src="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/flexbox-como-funciona.png" width="600 px"> 
+    <br><b>Contenedor:</b> Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles.
+    <br><b>Ítem:</b> Cada uno de los hijos flexibles que tendrá el contenedor en su interior.
+    <h3>flex-container</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th> Propiedad </th>
+                <th> que es lo que hace </th>
+                <th> Valores para la Propiedad </th>
+            </tr>    
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>display: flex</td> 
+                <td>inline-flex establece un contenedor en línea; flex establece un contenedor en bloque. La propiedad display define un contenedor padre</td>
+                <td>flex -- inline-flex</td>
+             </tr>
+
+             <tr>
+                <td>flex-direction</td> 
+                <td>Establece la dirección del eje principal y por tanto la dirección de los elementos flex.</td>
+                <td>row -- row-reverse -- column -- column-reverse </td>
+             </tr>
+
+             <tr>
+                <td>flex-wrap</td> 
+                <td>Especifica si puede haber un cambio de línea (wrap) o no (nowrap).</td>
+                <td>nowrap -- wrap -- wrap-reverse </td>
+             </tr>
+
+             <tr>
+                <td>flex-flow</td> 
+                <td>Es una forma abreviada (shorthand) para las propiedades flex-direction y flex-wrap.</td>
+                <td>flex-direction -- [flex-wap] </td>
+             </tr>
+
+             <tr>
+                <td>align-items</td> 
+                <td>Alinea los elementos del contenedor flex en el eje secundario (cross).</td>
+                <td>flex-start -- flex-end -- center -- baseline -- stretch </td>
+             </tr>
+
+             <tr>
+                <td>align-items</td> 
+                <td>Alinea los elementos del contenedor flex en el eje secundario (cross).</td>
+                <td>flex-start -- flex-end -- center -- baseline -- stretch </td>
+             </tr>
+
+             <tr>
+                <td>justify-content</td> 
+                <td>Alinea los elementos del contenedor flex en el eje principal, evidentemente cuando no ocupan todo el espacio.</td>
+                <td>flex-start -- flex-end -- center -- space-between -- space-around</td>
+             </tr>
+             
+             <tr>
+                <td>align-content</td> 
+                <td>Alinea los elementos del contenedor flex cuando los elementos ocupan más de una línea y no utilizan todo el espacio disponible en el eje secundario </td>
+                <td>flex-start -- flex-end -- center -- space-between -- space-around</td>
+             </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    <h3>flex-items</h3>
+    <table>
+        <thead>
+            <tr>
+                <th> Propiedad </th>
+                <th> que es lo que hace </th>
+                <th> Valores para la Propiedad </th>
+            </tr>    
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>align-self</td> 
+                <td>Reposiciona elementos individuales relativamente al eje transversal</td>
+                <td>auto -- flex-star -- flex-end -- center -- baseline -- stretch</td>
+             </tr>
+
+             <tr>
+                <td>flex-grow</td> 
+                <td>Define cuánto puede aumentar un elemento flex.</td>
+                <td>initial -- inherit -- numero</td>
+             </tr>
+
+             <tr>
+                <td>flex-shrink</td> 
+                <td>Define cuánto puede disminuir un elemento flex</td>
+                <td>initial -- inherit  -- numero</td>
+             </tr>
+
+             <tr>
+                <td>flex-basis</td> 
+                <td>Especifica el valor inicial del tamaño principal de un elemento flex</td>
+                <td>initial -- inherit -- auto -- numero</td>
+             </tr>
+
+             <tr>
+                <td>order</td> 
+                <td>Se utliza para cambiar el order en el que aparecen los elementos individuales</td>
+                <td>initial -- inherit -- auto -- numero </td>
+             </tr>
+
+             <tr>
+                <td>flex</td> 
+                <td>La forma abreviada para flex-grow, flex-shrink y flex-basis</td>
+                <td>none -- flex-grow [flex-shrink] [flex-basis]</td>
+             </tr>
+        </tbody>
+    </table>
+
+<br>https://somospnt.com/blog/148-flexbox-que-es-y-para-que-sirve<br>
+https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox<br>
+https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/<br>
+https://3con14.biz/css/layout-responsive/flex-box/21-propiedades-flex-container.html<br>
+
+</body>
+</html>
