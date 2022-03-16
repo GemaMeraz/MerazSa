@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+.contenedor{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(228, 200, 167);
+    flex-direction: column  ;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.caja{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(94, 180, 180);
+    margin:5px;
+    text-align: center;
+    flex-shrink: 1;
+    align-self:center;
+    border: 3px solid cadetblue;
+    
+}
