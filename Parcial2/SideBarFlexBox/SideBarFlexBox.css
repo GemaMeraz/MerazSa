@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    size: 20px;
+}
+
+/*Formato*/
+.ModificarLabel {
+    background-color: rgb(80, 176, 255);
+    padding: 5px;
+    color: cornsilk;
+    font-size: 25px;
+}
+
+
+
+div.BarraLateral{
+background-color:rgb(116, 149, 154);
+width: 200px;
+height: 100%;
+}
+
+
+
+a{
+display: block;
+text-decoration:none;
+padding: 5px;
+color: white;
+}
+
+a:hover{
+    background-color: darkcyan;
+    color: rgb(212, 215, 247);
+    text-decoration: underline;
+}
+
+div.contenedor{
+    display:flex;
+    flex-direction:row;
+    width:100vw;
+    height:100vh;
+}
+
+div.content{
+    background-color:rgb(246, 234, 190);
+   /* margin-left: 200px;*/
+    padding: 2px 15px;
+    flex-grow: 2;
+}
+
+#Inicio img{
+    width: 100%;
+    height: 410px;
+    margin-bottom: 15px;
+}
+
+/*Tamaño de las imagenes que se muestras en las categorias*/
+#Desayunos img{
+    width: 20%;
+    height: 200px;
+    margin: 0.5em;
+    float: left;
+}
+
+#Comidas img, #Postres img{
+    width: 30%;
+    height: 150px;
+    margin: 0.5em;
+    float: left;
+    
+}
+p{
+    margin-bottom: 70px;
+
+}
+/*Modificar caracteristicas de h1*/
+h1{
+    font-size: 55px;
+    text-align: center;
+    font-style:oblique;
+}
+.contenidoOpcion{display: none;}
+
+#Inicio:target,
+#Postres:target,
+#Desayunos:target,
+#Comidas:target{display: block;}
+
+
+
+@media screen and (max-width: 1200px){
+    
+    div.contenedor {
+        flex-direction:column;
+      }
+    
+      div.BarraLateral {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        height: auto;
+      }
+
+   input:checked + .BarraLateral{
+        height: 0;
+      }
+    
+}
+
+@media screen and (max-width: 650px) {
+    div.BarraLateral {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    
+   input:checked + .BarraLateral{
+        height: 0;
+      }
+}
+
+input {display: none;}
+
+input:checked + .BarraLateral{
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+input:checked ~ .content {
+  margin-left: 0;
+}
+
+
+
