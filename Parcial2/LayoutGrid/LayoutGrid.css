@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+.contenedor{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(236, 214, 189);
+    
+    grid-template-columns: 50% 50% ;
+    grid-template-rows: 25% 30% 30% 15%;
+    
+    justify-content: center;
+    align-content: center;
+}
+
+.caja{
+    background-color: rgb(123, 201, 191);
+    margin:2px;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid rgb(237, 238, 245);
+}
+
+#header{
+    grid-column: 1 / span 2;
+    background-color: rgb(189, 201, 123);
+}
+p{
+    font-size: 18px;
+}
+#footer{
+    grid-row: 4;
+    grid-column: 1 / span 2;
+    background-color: rgb(123, 201, 178);
+   
+}
