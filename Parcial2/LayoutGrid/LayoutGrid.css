@@ -2,6 +2,18 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
+    text-align: center;
+}
+img{
+    float: left;
+    margin: 10px;
+}
+
+
+p{
+    font-size: 18px;
+    text-align:left;
+    margin: 15px;
 }
 
 .contenedor{
@@ -11,30 +23,50 @@
     background-color:rgb(236, 214, 189);
     
     grid-template-columns: 50% 50% ;
-    grid-template-rows: 25% 30% 30% 15%;
+    grid-template-rows: 20% 35% 35% 10%;
     
+    grid-template-areas: 'header header' 'section1 section2'  'section3 section4' 'footer footer';
+
     justify-content: center;
     align-content: center;
 }
 
 .caja{
     background-color: rgb(123, 201, 191);
-    margin:2px;
-    text-align: center;
+    margin:5px;
     font-size: 30px;
-    border: 1px solid rgb(237, 238, 245);
+    border: 3px solid rgb(237, 238, 245);
+    justify-self: center;
 }
 
 #header{
+    margin:5px;
     grid-column: 1 / span 2;
     background-color: rgb(189, 201, 123);
+    font-size: 45px;
+    font-family: monospace;
+
+    grid-area: header;
 }
-p{
-    font-size: 18px;
-}
+
+#section1{grid-area: section1;}
+#section2{grid-area: section2;}
+#section3{grid-area: section3;}
+#section4{grid-area: section4;}
+
 #footer{
     grid-row: 4;
     grid-column: 1 / span 2;
     background-color: rgb(123, 201, 178);
+    font-size: 20px;
    
+    grid-area: footer;
+}
+
+
+@media screen and (max-width: 650px ){
+    p{
+        font-size: 12px;
+    }
+    
 }
