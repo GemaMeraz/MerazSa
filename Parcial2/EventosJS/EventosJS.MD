@@ -1,6 +1,5 @@
 # Captura y propagación (bubbling)  
 ## Gema Nataly Meraz Sánchez 19100218 
---------------------------------------
 
 Las tres fases de la propagación de eventos en JavaScript son esenciales para comprender cómo usar eventos. Estas fases son:
 1. **La fase de captura del evento** - *el evento desciende al elemento.*
@@ -40,11 +39,11 @@ Aunque oficialmente hay tres fases, la segunda fase “objetivo” que ocurre cu
 El principio de propagación es simple. Cuando un evento ocurre en un elemento, este primero ejecuta los manejadores que tiene asignados, luego los manejadores de su padre, y así hasta otros ancestros.
 
 Digamos que tenemos 3 elementos anidados FORM > DIV > P con un manejador en cada uno de ellos:
-> *<*form onclick="alert('form')"*>* FORM    
+>  *<*form onclick="alert('form')"*>* FORM    
 >  *<*div onclick="alert('div')"*>* DIV    
 >    *<*p onclick="alert('p')"*>* P *<*/p *>*   
 >  *<*/div *>*       
-> *<*/form *>*
+> *<*/form *>* 
 
 Un clic en el elemento del interior `<`p`>` primero ejecuta onclick:
 1. En ese `<`p`>`.
@@ -52,10 +51,18 @@ Un clic en el elemento del interior `<`p`>` primero ejecuta onclick:
 3. Luego en el `<`form`>` de más arriba.
 4. Y así sucesivamente hasta el objeto *document*.
 
-**Este proceso se conoce como “propagación” porque los eventos “se propagan” desde el elemento más al interior, a través de los padres, como una burbuja en el agua.**
+**Este proceso se conoce como “propagación” porque los eventos “se propagan” desde el elemento más al interior, a través de los padres, como una burbuja en el agua.**     
+
+**Detener la propagación**     
+Si un elemento tiene múltiples manejadores para un solo evento, aunque uno de ellos detenga la propagación, los demás aún se ejecutarán.
+
+En otras palabras, `event.stopPropagation()` detiene la propagación hacia arriba, pero todos los manejadores en el elemento actual se ejecutarán.
+
+Para detener la propagación y prevenir que los manejadores del elemento actual se ejecuten, hay un método `event.stopImmediatePropagation()`. Después de él, ningún otro manejador será ejecutado.
 
 
-
-
-
+## Fuentes consultadas    
+* https://es.javascript.info/bubbling-and-capturing#detener-la-propagacion
+* https://ichi.pro/es/explicacion-de-las-3-fases-de-la-propagacion-de-eventos-en-javascript-272005793657919
+* https://es.acervolima.com/que-es-la-propagacion-de-eventos-y-la-captura-de-eventos-en-javascript/
 
