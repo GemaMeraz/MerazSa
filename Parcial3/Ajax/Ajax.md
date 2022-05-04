@@ -9,11 +9,9 @@ Realizar peticiones al servidor y esperar respuesta puede consumir tiempo. Para 
 
 Con Ajax, se hace posible realizar peticiones al servidor y obtener respuesta de este en segundo plano (sin necesidad de recargar la página web completa) y usar esos datos para, a través de JavaScript, modificar los contenidos de la página creando efectos dinámicos y rápidos.
 
-<div>
-<p style = 'text-align:center;'>
+
 <img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-ajax/sta-je-ajax.jpg " width="400px" height="250px">
-</p>
-</div>  
+
 
 Cuando realizamos peticiones AJAX disponemos del mismo sistema aunque usamos verbos para comunicarnos con el servidor.
 
@@ -43,11 +41,8 @@ En el esquema de comunicación tradicional: el cliente solicita una página web 
 Por el contrario, en el esquema de comunicación usando Ajax: el cliente tiene una página web cargada. El cliente sigue trabajando y en segundo plano le dice al servidor que le envíe un paquete de datos que le hacen falta. El servidor procesa la petición. Ahora la respuesta es mucho más rápida; no tiene que elaborar una página web completa, sino sólo preparar un paquete de datos. Por tanto el tiempo de respuesta es más rápido. El servidor envía el paquete de datos al cliente y el cliente los usa para cambiar los contenidos que se estaban mostrando en la página web.
 
 
-<div>
-<p style = 'text-align:center;'>
 <img src="https://www.aprenderaprogramar.com/images/stories/Cursos/CU011/CU01193E_1.png " width="500px" height="650px">
-</p>
-</div>
+
 
 |        Modelo Tradicional           |  Modelo Ajax               |
 |-------------------------------------|----------------------------|
