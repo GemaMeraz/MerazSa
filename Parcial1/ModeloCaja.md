@@ -1,9 +1,5 @@
 # Modelo de Caja 
-#### Gema Nataly Meraz Sánchez  19100218  
-
-
--------  
-
+### Gema Nataly Meraz Sánchez  19100218  
 
 Los elementos que se encuentran en una pagina estan separados por cajas, este modelo una característica importante del lenguaje de hojas de estilos CSS. El modelo de cajas es el comportamiento de CSS que hace que todos los elementos de las páginas se representen mediante cajas rectangulares.  
 
