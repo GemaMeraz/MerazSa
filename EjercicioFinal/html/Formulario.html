@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="../js/Formulario.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Formulario</title>
 </head>
 <body style="background-color: beige;" >
@@ -24,7 +25,7 @@
             
             <div class="form-group col-sm-12 col-md-6 col-lg-4"> <fieldset disabled>
               <label for="idProducto" id="Prod">Id del producto</label>
-              <input id="idProducto" type="text" class="form-control" placeholder="tc158 "/>
+              <input id="idProducto" type="text" class="form-control" placeholder="id "/>
             </fieldset>
             </div>
 
@@ -82,40 +83,15 @@
     
           <br> 
           
-          <button id="btnConsulta" type="button" class="btn btn-primary" style="color: white; background-color: rgb(94, 168, 147)"> Consulta</button>
+          <button id="btnConsulta" type="button" class="btn btn-primary" style="color: white; background-color: rgb(94, 168, 147); border-style: none;"> Consulta</button>
+          <button id="btnAgregar" type="button" class="btn btn-primary" style="color: white; background-color: rgb(164, 179, 79);border-style: none;"> Agregar</button>
+          <button id="btnEliminar" type="button" class="btn btn-primary" style="color: white; background-color: rgb(221, 170, 92);border-style: none;"> Eliminar</button>
+          <button id="btnModificar" type="button" class="btn btn-primary" style="color: white; background-color: rgb(81, 196, 211);border-style: none;"> Modificar</button>
+          <button id="btnLimpiar" type="button" class="btn btn-primary" style="color: white; background-color: rgb(55, 79, 158);border-style: none;"> Limpiar</button>
 
         </form>
         
-          <div id="alerta1" class="alert alert-primary alert-dismissible collapse " role="alert">
-            <strong>Informacion correcta</strong> You should check in on some of those fields below.
-            <button id="btnCloseAlert" type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
 
-
-          <div  id="mod1" class="modal" tabindex="-1">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Mensaje emergente</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-<!-- <div id="resultado">Capturar información</div> -->
 
 
 </body>

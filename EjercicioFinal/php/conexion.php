@@ -16,7 +16,7 @@ try{
 }
 
 try{
-    $consultaSql = "select * from producto where idProducto='".$iduser."'";
+    $consultaSql = "select * from producto where idProducto=".$iduser;
     $consulta=$con -> prepare($consultaSql);
     $consulta -> execute();
     $resultado = $consulta->fetch(PDO::FETCH_ASSOC);

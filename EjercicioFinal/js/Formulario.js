@@ -1,74 +1,134 @@
 $(document).ready( function() {
-    // $('#btn1').click(function()
-    //     {
-    //      $('#alerta1').show(); 
-    //     });
-    //     $('#btnCloseAlert').click(function() {
-    //       $('#alerta1').hide();
-    //     });
-
-
-    // $("#btnAJAX").click(ajaxFunction);
-
-    // function ajaxFunction() {
-    
-    //     var ajaxRequest;
-    //     ajaxRequest = new XMLHttpRequest();
-    
-    
-    //     ajaxRequest.onreadystatechange = function() {
-    //         if (ajaxRequest.readyState == 4)                                
-    //         { document.getElementById("resultado").innerHTML = ajaxRequest.responseText; } 
-    //     };
-    
-    //     ajaxRequest.open("GET","../php/BotonAjax.php",true);  
-    //     ajaxRequest.send();                                  
-    // }
-
-    // $('#btnJSON').click(function() {
-    //     $.post('../php/Formulario.php',{},function(data){
-    
-    //           console.log(data);
-    //           $('#idProducto').val(data.idProducto);
-    //           $('#nomProducto').val(data.nomProducto);
-    //           $('#marcaProd').val(data.marcaProd);
-    //           $('#catProd').val(data.catProd);
-    //           $('#contProd').val(data.contProd);
-    //           $('#proveedor').val(data.proveedor);
-    //           $('#desProd').val(data.desProd);
-    //           $('#precioProd').val(data.precioProd);
-    
-    //       },'json');
-    // });
-
-
-    // $('#btnP').click(function(){
-    //     let promesa = new Promise (function(resolve, reject){
-    //         var solicitud=new XMLHttpRequest();
-    //         solicitud.onreadystatechange = function() {
-    //             if(solicitud.readyState == 4 && solicitud.status == 200){
-    //              resolve(solicitud.responseText);   
-    //             }};
-    //             solicitud.open("GET", "Promesa.txt", true );
-    //             solicitud.send();
-    //     });
-    //     promesa.then(function(value){document.getElementById("resultado").innerHTML = value;});
-    // });
-
-
-    // document.getElementById("btnFetch").addEventListener("click", function() {
-    //     let promesa = fetch('../php/Formulario.php');
-    //     promesa.then(respuesta => respuesta.json() ).then(datos => console.log(datos)); //función flecha return implicito
-    // });
-
-
+  
     $('#btnConsulta').click(function(){
-        let parid=prompt("Teclee el ID a consultar");
-
-        $.post('../php/conexion.php',{par1:parid},function(data){
+      Swal.fire({
+        title: 'Consultar',
+        input: 'text',
+        inputAttributes: {
+          autocapitalize: 'off',
+          id:'dato'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Consultar',
+        showLoaderOnConfirm: true,
+       
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let parid= $("#dato").val();
+          $.post('../php/conexion.php',{par1:parid},function(data){
             refrescar(data);
         }, 'json' );
+        }
+      })
+        
+
+       
     });
+
+    $('#btnAgregar').click(function(){
+        let idProducto =$('#idProducto').val();
+        let nomProducto = $('#nomProducto').val();
+        let marcaProd = $('#marcaProd').val();
+        let catProd = $('#catProd').val();
+        let contProd = $('#contProd').val();
+        let proveedor = $('#proveedor').val();
+        let desProd = $('#desProd').val();
+        let precioProd = $('#precioProd').val();
+
+        $.post('../php/agregar.php', {id:idProducto, nom:nomProducto, ma:marcaProd, cat:catProd, cont:contProd, pr:proveedor, de:desProd, pre:precioProd});
+
+        Swal.fire({
+            /*position: 'top-end',*/
+            icon: 'success',
+            title: 'La información se ha agregado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        
+
+        
+    });
+    
+
+    $('#btnModificar').click(function(){
+        let idProducto =$('#idProducto').val();
+        let nomProducto = $('#nomProducto').val();
+        let marcaProd = $('#marcaProd').val();
+        let catProd = $('#catProd').val();
+        let contProd = $('#contProd').val();
+        let proveedor = $('#proveedor').val();
+        let desProd = $('#desProd').val();
+        let precioProd = $('#precioProd').val();
+
+        Swal.fire({
+            title: '¿Desea actualizar la información?',
+            /*text: "You won't be able to revert this!",*/
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Actualizar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Se ha actualizado la información',
+                'success'
+              )
+              
+            }
+            $.post('../php/modificar.php', {id:idProducto, nom:nomProducto, ma:marcaProd, cat:catProd, cont:contProd, pr:proveedor, de:desProd, pre:precioProd});
+          })
+    });
+   
+    $('#btnEliminar').click(function(){
+        let v = $('#idProducto').val();
+
+        
+         const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+               cancelButton: 'btn btn-danger'
+             },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+             title: '¿Deseas eliminar este registro?',
+             icon: 'warning',
+             showCancelButton: true,
+             confirmButtonText: 'Eliminar',
+             cancelButtonText: 'Cancelar',
+             reverseButtons: true
+           }).then((result) => {
+             if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire(
+                 'Se eliminó',
+                 '',
+                 'success'
+                 
+               )
+               $.post('../php/eliminar.php',{par1:v},function(data){
+                refrescar(data);
+            }, 'json' );
+             }
+             
+             else if (
+              
+               result.dismiss === Swal.DismissReason.cancel
+            ) {
+               swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                 'error'
+              )
+            }
+
+
+          })
+
+        
+    });
+
 
 
     function refrescar(objeto){
@@ -82,6 +142,17 @@ $(document).ready( function() {
         $('#desProd').val(objeto.desProd);
         $('#precioProd').val(objeto.precioProd);
     }
+
+    $('#btnLimpiar').click(function(){
+      document.getElementById('idProducto').value = "";
+       document.getElementById('nomProducto').value = "";
+       document.getElementById('marcaProd').value = "";
+       document.getElementById('catProd').value = "";
+       document.getElementById('contProd').value = "";
+       document.getElementById('proveedor').value = "";
+       document.getElementById('desProd').value = "";
+       document.getElementById('precioProd').value = "";
+    });
 
 });
 
